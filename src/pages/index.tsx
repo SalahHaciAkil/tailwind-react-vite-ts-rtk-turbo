@@ -1,8 +1,11 @@
+import { useLoginMutation } from "@/api/auth";
+
 interface Instruction {
   code: string;
   description: string;
 }
 export default function Index() {
+  const [login, { isLoading }] = useLoginMutation();
   const changeTheme = (theme: string) => {
     // get html element and add the attribute data-theme
     document.documentElement.setAttribute("data-theme", theme);
@@ -24,6 +27,14 @@ export default function Index() {
   return (
     <>
       <div className="mockup-code w-fit">
+        <div
+          className="btn btn-primary"
+          onClick={() => {
+            login({ email: "admin@localhost", password: "admin" });
+          }}
+        >
+          Login lan
+        </div>
         {/* <pre data-prefix="1">
           <code>
             npm i{" "}
@@ -47,11 +58,11 @@ export default function Index() {
           </pre>
         ))}
       </div>
-      <div className="mockup-browser bg-base-300 border">
+      <div className="mockup-browser border bg-base-300">
         <div className="mockup-browser-toolbar">
           <div className="input">https://localhost:5173/</div>
         </div>
-        <div className="bg-base-200 flex justify-center px-4 py-16">
+        <div className="flex justify-center bg-base-200 px-4 py-16">
           Attention: Please Make Sure Your URL is Correct As This is a Mockup ☝🏼
         </div>
       </div>
@@ -85,7 +96,7 @@ export default function Index() {
         </button>
       </div>
 
-      <div className="hero bg-base-200 min-h-screen">
+      <div className="hero min-h-screen bg-base-200">
         <div className="hero-content w-full flex-col lg:flex-row-reverse">
           <div className="text-center lg:text-left">
             <h1 className="text-5xl font-bold">Login now!</h1>
@@ -95,7 +106,7 @@ export default function Index() {
               et a id nisi.
             </p>
           </div>
-          <div className="card bg-base-100 w-full max-w-lg shrink-0 shadow-2xl">
+          <div className="card w-full max-w-lg shrink-0 bg-base-100 shadow-2xl">
             <form className="card-body">
               <div className="form-control">
                 <label className="label">
@@ -119,7 +130,7 @@ export default function Index() {
                   required
                 />
                 <label className="label">
-                  <a href="#" className="label-text-alt link link-hover">
+                  <a href="#" className="link-hover link label-text-alt">
                     Forgot password?
                   </a>
                 </label>
@@ -141,10 +152,10 @@ export default function Index() {
         <div className="skeleton h-[50px] w-[50px] rounded-full" />
       </div>
 
-      <input type="checkbox" className="toggle toggle-warning" />
-      <input type="checkbox" className="toggle toggle-error" />
-      <input type="checkbox" className="toggle toggle-success" />
-      <input type="checkbox" className="toggle toggle-info" />
+      <input placeholder="test placeholder" type="checkbox" className="toggle toggle-warning" />
+      <input placeholder="test placeholder" type="checkbox" className="toggle toggle-error" />
+      <input placeholder="test placeholder" type="checkbox" className="toggle toggle-success" />
+      <input placeholder="test placeholder" type="checkbox" className="toggle toggle-info" />
 
       <div className="avatar">
         <div className="w-24 rounded-full">

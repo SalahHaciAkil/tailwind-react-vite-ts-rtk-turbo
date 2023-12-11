@@ -21,7 +21,7 @@ export default function Notfound() {
             <form action="#" method="POST" className="mt-8">
               <div className="space-y-5">
                 <div>
-                  <label for="" className="text-base font-medium text-gray-900">
+                  <label className="text-base font-medium text-gray-900">
                     {" "}
                     Full Name{" "}
                   </label>
@@ -37,7 +37,7 @@ export default function Notfound() {
                 </div>
 
                 <div>
-                  <label for="" className="text-base font-medium text-gray-900">
+                  <label className="text-base font-medium text-gray-900">
                     {" "}
                     Email address{" "}
                   </label>
@@ -53,7 +53,7 @@ export default function Notfound() {
                 </div>
 
                 <div>
-                  <label for="" className="text-base font-medium text-gray-900">
+                  <label className="text-base font-medium text-gray-900">
                     {" "}
                     Password{" "}
                   </label>
@@ -70,16 +70,14 @@ export default function Notfound() {
 
                 <div className="flex items-center">
                   <input
+                    placeholder="Enter your password again"
                     type="checkbox"
                     name="agree"
                     id="agree"
                     className="h-5 w-5 rounded border-gray-200 bg-white text-blue-600"
                   />
 
-                  <label
-                    for="agree"
-                    className="ml-3 text-sm font-medium text-gray-500"
-                  >
+                  <label className="ml-3 text-sm font-medium text-gray-500">
                     I agree to Postcraft’s{" "}
                     <a
                       href="#"

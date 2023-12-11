@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* .btn {
+  @apply rounded-full;
+} */
+[data-theme="care"] .btn {
+  /* this will only apply to buttons with a data-theme attribute of "care" */
+}

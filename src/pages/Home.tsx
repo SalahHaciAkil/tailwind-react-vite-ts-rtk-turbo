@@ -1,11 +1,11 @@
-import { useLoginMutation } from "@/api/auth";
+import React from "react";
 
 interface Instruction {
   code: string;
   description: string;
 }
-export default function Index() {
-  const [login, { isLoading }] = useLoginMutation();
+export default function Home() {
+  // const [login, { isLoading }] = useLoginMutation();
   const changeTheme = (theme: string) => {
     // get html element and add the attribute data-theme
     document.documentElement.setAttribute("data-theme", theme);
@@ -27,14 +27,7 @@ export default function Index() {
   return (
     <>
       <div className="mockup-code w-fit">
-        <div
-          className="btn btn-primary"
-          onClick={() => {
-            login({ email: "admin@localhost", password: "admin" });
-          }}
-        >
-          Login lan
-        </div>
+        <h1 className="text-3xl font-bold">Welcome to Postcraft</h1>
         {/* <pre data-prefix="1">
           <code>
             npm i{" "}
@@ -142,9 +135,6 @@ export default function Index() {
           </div>
         </div>
       </div>
-      <span className="countdown font-mono text-6xl">
-        <span style={{ "--value": 12 }}></span>
-      </span>
       <div className="flex flex-col gap-4">
         <div className="skeleton h-[20px] w-[300px]" />
         <div className="skeleton h-[20px] w-[200px]" />
@@ -152,10 +142,26 @@ export default function Index() {
         <div className="skeleton h-[50px] w-[50px] rounded-full" />
       </div>
 
-      <input placeholder="test placeholder" type="checkbox" className="toggle toggle-warning" />
-      <input placeholder="test placeholder" type="checkbox" className="toggle toggle-error" />
-      <input placeholder="test placeholder" type="checkbox" className="toggle toggle-success" />
-      <input placeholder="test placeholder" type="checkbox" className="toggle toggle-info" />
+      <input
+        placeholder="test placeholder"
+        type="checkbox"
+        className="toggle toggle-warning"
+      />
+      <input
+        placeholder="test placeholder"
+        type="checkbox"
+        className="toggle toggle-error"
+      />
+      <input
+        placeholder="test placeholder"
+        type="checkbox"
+        className="toggle toggle-success"
+      />
+      <input
+        placeholder="test placeholder"
+        type="checkbox"
+        className="toggle toggle-info"
+      />
 
       <div className="avatar">
         <div className="w-24 rounded-full">
@@ -392,9 +398,7 @@ export default function Index() {
 
               <form action="#" method="POST" className="mt-6">
                 <div>
-                  <label for="email" className="sr-only">
-                    Email
-                  </label>
+                  <label className="sr-only">Email</label>
                   <input
                     type="email"
                     name="email"

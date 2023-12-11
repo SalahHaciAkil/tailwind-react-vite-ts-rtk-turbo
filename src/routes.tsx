@@ -1,15 +1,14 @@
+import { Home } from "@/pages";
 import { lazy, Suspense } from "react";
 import { type RouteObject } from "react-router-dom";
 
-const Index = lazy(() => import("@/pages/index"));
-const Notfound = lazy(() => import("@/pages/404"));
-
+const NotFound = lazy(() => import("@/pages/NotFound"));
 export const routes: Array<RouteObject> = [
   {
     index: true,
     element: (
       <Suspense>
-        <Index />
+        <Home />
       </Suspense>
     ),
   },
@@ -17,7 +16,7 @@ export const routes: Array<RouteObject> = [
     path: "*",
     element: (
       <Suspense>
-        <Notfound />
+        <NotFound />
       </Suspense>
     ),
   },

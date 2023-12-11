@@ -6,6 +6,7 @@ import App from "@/App";
 import { Provider } from "react-redux";
 import "@/global";
 import { store } from "@/store";
+import { Login, Test } from "@/pages";
 
 const container = document.getElementById("root") as HTMLElement;
 
@@ -17,6 +18,14 @@ const router = createBrowserRouter([
     element: <App />, //layout
     children: routes,
     errorElement: <div>error</div>,
+  },
+  {
+    path: "/login",
+    element: <Login />,
+  },
+  {
+    path: "/test",
+    element: <Test />,
   },
 ]);
 

@@ -1,4 +1,4 @@
-export default function Notfound() {
+export default function NotFound() {
   return (
     <section className="bg-white">
       <div className="grid grid-cols-1 lg:grid-cols-2">
